@@ -15,13 +15,13 @@ class Signin extends React.Component {
     };
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
 
     this.setState({ email: "", password: "" });
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { value, name } = event.target;
 
     this.setState({ [name]: value });
@@ -50,10 +50,12 @@ class Signin extends React.Component {
             label="Password"
             required
           />
-          <CustomButton type="submit">Sign in</CustomButton>
-          <CustomButton onClick={signInWithGoogle}>
-            Sign in with Google
-          </CustomButton>
+          <div className='buttons'>
+            <CustomButton type="submit">Sign in</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+              Sign in with Google
+            </CustomButton>
+          </div>
         </form>
       </div>
     );
