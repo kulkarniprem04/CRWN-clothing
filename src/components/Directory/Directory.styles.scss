@@ -3,4 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  &:last-child {
+    margin-bottom: 3em;
+  }
 }

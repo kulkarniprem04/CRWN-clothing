@@ -1,4 +1,8 @@
 .collection-overview {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+
+  &:last-child {
+    margin-bottom: 5em;
+  }
 }

@@ -4,6 +4,7 @@ import "./styles.css";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
+import BottomAppBar from "./components/Footer/footer.component";
 import Header from "./components/Header/Header.component";
 import HomePage from "./pages/homepage/Homepage.component";
 import ShopPage from "./pages/Shoppage/Shop-page.component";
@@ -19,14 +20,14 @@ class App extends React.Component {
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
-    this.unsunscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    this.unsunscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
-        userRef.onSnapshot(snapshot => {
+        userRef.onSnapshot((snapshot) => {
           setCurrentUser({
             id: snapshot.id,
-            ...snapshot.data()
+            ...snapshot.data(),
           });
         });
       }
@@ -54,17 +55,18 @@ class App extends React.Component {
           />
           <Route exact path="/checkout" component={CheckoutPage} />
         </Switch>
+        <BottomAppBar />
       </div>
     );
   }
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
