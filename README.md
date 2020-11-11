@@ -9,7 +9,7 @@ https://crown-clothing04.herokuapp.com/
 - stripe for payments at checkout
 - firebase-auth for user authentication
 - firebase firestore to store user data
-- Redux for state managrment
+- Redux for state management
 - redux-persist for local storage management
 - hosted at Heroku
 
