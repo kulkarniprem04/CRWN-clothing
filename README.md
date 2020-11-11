@@ -4,8 +4,6 @@ https://crown-clothing04.herokuapp.com/
 
 ## A simple ecommerce website to buy clothes online.
 
-<br />
-
 ## Powered by
 
 - stripe for payments at checkout
